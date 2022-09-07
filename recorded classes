@@ -1,0 +1,642 @@
+#creating a variable(data variable is used to store a value)
+num1=5 
+num2=2.555 
+sum=num1+num2
+print(type(num1))
+print(type(num2))
+print(sum)
+
+
+#taking input from the keyboard
+a=input("Enter the first number:\n")
+b=input("Enter the second number:n")
+sum=a+b
+print("The sum of the two numbers are:\n",sum)
+
+#Creating a string
+name="Tom"
+print(type(name))
+#concatenation
+print("My favourite cartoon is " +name)
+
+# Boolean(TRUE,FALSE)
+print(10>9)
+print(10==10)
+print(10<9)
+a=10>9
+if a==True:
+    print(a)
+
+#Lecture 2
+#Collection Datatypes in Python
+#List is used to store ,multiple datastyles in a single variable
+myList=["July batch",2022,True,0,555]
+print(type(myList))
+l2=[1,2,3,4,5,6,7,8,9] #homogeneous list
+print(myList)
+
+#list are mutalble
+myList=["July batch",2022,True,0,555]
+#indexing is to print the individual element
+print(myList[0])
+print(myList[1])
+print(myList[2])
+print(myList[3])
+print(myList[4])
+#negative indexing starts from right and from -1
+
+#updating my list
+myList=["July batch",2022,True,0,555,2022]
+myList[1]=2021
+print(myList)
+
+#Appending 
+myList.append("Python")
+myList.insert(-1,"Hello")
+print(myList)
+
+a=[1,2,3,4,5]
+b=[5,55,6,7]
+a.extend(b) # or a+b
+print(a)
+print(b)
+
+del myList[0]
+print(myList)
+
+#tuple is a datatypes in which the info is not mutable
+mytuple=(" Dell",2022,345,-2,False)
+print(mytuple)
+print(type(mytuple))
+
+#Dictionary is a daatype that consist of key and value
+mydict={
+    "Brand":["Dell," "Hp"],
+    "Colour":"Silver",
+    "Year":2,
+    "Condition":True
+}
+print(mydict)
+print(type(mydict))
+
+print(mydict["Condition"])
+print(mydict["Brand"])
+
+print(mydict["Brand"][0])
+
+mydict["Condition"]=False
+print(mydict)
+
+"""set-> a unordered collection of datatypes,
+contain no duplicates"""
+
+myset={"Yesterday","Today","Tomorrow",1,2.2,True,1}
+print(myset)
+print(type(myset))
+
+del myset[2]
+print(myset[1])
+
+#union
+set1={"A","B"}
+set2={"C","D"}
+set3=set1.union(set2)
+print(set3)
+print(type(set1))
+"""union cannot be used only for sets
+ and cannot be used for list """
+
+set4=set2|(set1)
+print(set4)
+#union symbol is |
+
+#interesection
+set5=set1.intersection(set4)
+print(set5)
+
+set6=set4&set3
+print(set6)
+set3.clear()
+print(set3)
+
+print(set1==set2)
+print(set1!=set2)
+print(set1>=set2)
+print(set1<=set2)
+
+#Function:- executes a set of code whenever it is called
+def GroupA():
+    print("Hello World")
+    print("Task is completed")
+i=0
+while i<5:
+    GroupB=GroupA()
+    i=i+1
+else:
+    print("Bye")
+    
+
+def add(num1,num2):
+    print("The sum of two numbers are",(num1+num2))
+a=int(input("Enter the first number: "))
+b=int(input("Enter the second number: "))
+add(a,b)
+add(5,6)
+
+def Data(name):
+    print("The give data belongs to",name)
+Data("Tom")
+
+def a():
+    x=input("Enter the name: ")
+    print("Hi",x)
+a()
+
+# Lectue 4
+
+def function(name,city):
+    print("Hello all ",name," and belongs to ",city)
+function("Tom","Bihar")
+
+def x():
+    for i in range (10):
+        print("Hii everyone")
+x()
+
+def add():
+    x=int(input("Enter the first value:"))
+    y=int(input("Enter the second value:"))
+    print(x+y)
+add()
+
+#Iterators: is an object the contains a countable number of values
+#iter and next method
+list=["A","B","C","D"]
+print(list)
+
+myiteration=iter(list)
+print(next(myiteration))
+print(next(myiteration))
+print(next(myiteration))
+print(next(myiteration))
+
+for x in list:
+    print(x)
+
+while True:
+    try:
+        a=next(myiteration)
+    except:
+        break
+
+name="Tom"
+for y in name:
+    print(y)
+
+#module: 
+import math
+print(math.pi)
+print(math.sin(0.5))
+
+import datetime
+x=datetime.datetime.now()
+print(x)
+
+# Lecture 5
+import module
+module.greet("Tom","Good Evening")
+
+#Advance argument passing
+def a(greeting):
+    print("Hello all",greeting)
+a("Good Evening")
+
+# positional arguments
+def pos(name,city,batch):
+    print("I am",name,"from",city,"My batch number is",batch)
+pos("Tom","Halwapur",2022)
+
+#Keywords arguments
+def key(course="python",batch="july",status="on the process"):
+    print("I started learninng",course,"course","and my batch number is",batch,"status of my training is",status)
+key("html",2022,"processing")
+#positional argument must be before keyword arguments
+
+#sequence : ordered collection of data
+list=[1,2,3,4,5]
+print(10 not in list)
+print(list[1])
+print(len(list))
+print("Minimum value in list is:",min(list))
+print("Maximum value in list is: ",max(list))
+
+seq="Tom"
+print(seq.index("o"))
+
+b="everyone"
+print(b.index("e",3))
+
+def batch(Teacher,*args):
+    print("Teacher name is",Teacher)
+    for studentno in args:
+        print("The students are",studentno)
+batch("Lucy",1,2,3,33,4,4,5,5,6)
+
+def a(*args):
+    print("hello")
+a(1,2,3,4,5)
+
+def data(Teacher,*a,**kwargs):
+    print(Teacher,"teacher is going to handle below roll no")
+    for studentno in a:
+        print(studentno)
+    for subject in kwargs:
+        print(subject,kwargs[subject])
+data("Tom",1,1,2,2,3,4,4,Math=2,science=2,python=10)
+
+def record(*no,**result):
+    print(no)
+    print(result)
+record(1,2,2,3,4,python="10 student passed",practical="2 student passed")
+
+#lamda function
+def func(a,b,c,d):
+    print(a,b,c,d)
+func(1,11,1,2)
+
+x=lambda x:x+10 #parameter:expression
+print(x(4))
+
+cal=lambda x,y,z:x+y*z
+print(cal(2,3,4))
+
+print((lambda a,b,c:a+b+c)(1,2,23))
+
+tables=(lambda x=x:x*10 for x in range (1,11))
+for table in tables:
+    print(table())
+
+y=lambda a,b:a if(a>b) else b
+print(y(3,2))
+
+#Files: The information that can be written, read, modified and stored(saved)
+#Different types of modes
+#Read mode
+#write mode
+#append mode
+
+#open file in a variable
+myfile=open("file.txt","r")
+print(myfile.read())
+
+myfile.close()
+
+data=open("file.txt","w")
+data.write("This is written by the programmer")
+
+
+myfile=open("file.txt","r")
+print(myfile.read())
+
+myfile=open("file.txt","a")
+myfile.write("\n This is also written by the programmer")
+
+myfile.close()
+myfile=open("file.txt","r")
+print(myfile.read())
+myfile.close()
+
+#Lecture 7
+#context manager in python: managing the resources.
+file=open("file.txt","w")
+file.write("Thank you everyone")
+file.close()
+
+#exception handling in python
+print(hello)
+
+try:
+    print(2/0)
+except:
+    print("Partially work done")
+    print("Error occured")
+
+try:
+    print("abcd")
+    print(abcd)
+    print("Task done")
+except:
+    print("partially work done")
+    print("Done")
+
+mylist=[1,2,3,4,5,6,7]
+try:
+    print(mylist[2])
+    print(mylist[10])
+except:
+    print("An error occured")
+
+list=[1,2,3,4,66,77]
+try:
+    for value in list:
+        if value<0:
+            print(value)
+except:
+    print("Error occured")
+
+try:
+    x=(4/1)
+    print(x)
+    y=(9/0)
+except:
+    print("An error occured")
+finally:
+    print("Partially work done")
+
+try:
+    raise(9/0)
+except:
+    print("Error")
+    raise
+
+import sys
+try:
+    x=open("file1.txt","r")
+    print(x.read())
+except:
+    print("file doesn't exist")
+finally:
+    print("partially done")
+
+#Lecture 8
+#Context manager
+with open("file.txt","a") as fileone:
+    fileone.write("Hello and all")
+#after this th file will actomatically get close
+
+
+#Python Decorators will allow the users to modify or add
+#new functionality to an existing object without 
+#modifying the structure
+def data():
+    print("Hii everyone")
+data()
+details=data()
+
+def increment(num1):
+    return num1+1
+def decrement(num1):
+    return num1-1
+decrement(22)
+
+def indec(func,num1):
+    result=func(num1)
+    return result
+indec(increment,7)
+
+def simple():
+    print("Python decorators")
+
+def complex(func):
+    def greet():
+        print("Good evening all")
+    func()
+    return greet()
+complex(simple)
+
+#indexing prints individual elements
+#Slicing prints range of elements
+
+slice="Hi everyone"
+print(slice[3:])
+
+print(slice[3:8])
+print(slice[-8:])
+
+slice="Good Evening"
+print(slice[8:])
+a="Decorators"
+print(a[2:5])
+
+s="python"
+print(s[1:5:2])
+
+#string formatting: allows to format the selected part
+print("Hello %s , Welcome %s" %("class","all"))
+
+print("Hello {}".format("class"))
+
+#Lecture 9
+#String formatting
+# % operator, format, f string, string template class
+print("Hello %s , Welcome %s" %("Class","all"))
+
+#format method
+print("Hello {}".format("Class"))
+
+print("Hello {2}, you are {1}, welcome {0}".format("Class","Welcome","all"))
+
+print("hello: {a}".format(a="Welcome"))
+
+#f string
+name="Tom"
+print("My favourite is",name)
+
+n1=10
+n2=10
+print(f"The addition is {n1+n2}")
+
+# Regular expression
+#search pattern (opposite of slicing)
+import re
+greet="Hello, You are welcome"
+
+data=re.search("You",greet)
+print("Start of the index number",data.start())
+print("End of the index number",data.end())
+
+data1=re.sub("\s","and",greet)#sub replace spaces
+print(data1)
+
+greet="Hello, You are welcome99999"
+match=re.findall("\d+",greet)
+print(match)
+
+match1=re.split("\s",greet)
+print(match1)
+
+greet="Hello, You are welcome"
+mat=re.sub("\d","2",greet)
+print(mat)
+
+#comprehension: can be done in short and precise way
+#list 
+list1=[1,2,3,4,5,6]
+print(list1)
+
+even_list=[]
+for value in list1:
+    if value%2==0:
+        even_list.append(value)
+print(even_list)
+
+odd_list=[]
+for value in list1:
+    if value%2!=0:
+        odd_list.append(value)
+print(odd_list)
+
+#list comprehension
+even=[value for value in list1 if value %2==0]
+print(even)
+
+odd=[value for value in list1 if value %2!=0]
+print(odd)
+
+num=[i for i in range (10) if i%2==0]
+print(num)
+
+details=[i if i%2==0 else "Error" for i in range(11)]
+print(details)
+
+details=["Even" if i%2==0 else "odd" for i in range(11)]
+print(details)
+
+#Dictionary
+list1=[1,2,3,4,5,6]
+mydic={}
+for value in list1:
+    mydic[value]=value**2
+print(mydic)
+
+#dic comprehension
+dic={value:value**2 for value in list1}
+print(dic)
+
+even_set=set()
+for value in list1:
+    if value%2==0:
+        even_set.add(value)
+print(even_set)
+
+#set comprehension
+set={x for x in list1 if x%2==0}
+print(set)
+
+print([x for x in range(11) if x%2==0])
+
+#generators: 
+def mygenerator():
+    n=6
+    print("This is printed before yield statement",n)
+    yield n
+    yield n*2
+x=mygenerator()
+print(next(x))
+print(next(x))
+
+def gen():
+    for value in range (11):
+        if(value%2==0):
+            yield value*2
+for value in gen():
+    print(value)
+
+mylist=[1,2,3,4]
+a=(x**2 for x in mylist)
+for gen in mylist:
+    print(next(a))
+
+# OOPs: Object Oriented Programming Language
+# Create project interms of class and object
+#Few fundamental concept are used in oop
+#Class: is a blueprint or plan
+class mylaptop():
+#class attribute the changes can be applied to all the objects
+    processor="Intel i5"
+    Display="FHD Touch Display"
+    #instance attribute is a variable belonging to only one object
+    def __init__(self,color):
+        self.color=color
+    def greet(a):
+        print("Hello and welcome")
+#inheritance
+class mymobile(mylaptop):
+    def __init__(a,color,camera):
+        a.camera=camera
+        mylaptop .__init__(a,color)
+    
+mylaptop.processor="Intel i7"
+
+myobj=mylaptop("red")
+myobj1=mylaptop("Black")
+myobj1.processor="Pentium"
+myobj2=mylaptop("Purple")
+print(myobj.processor)
+print(myobj1.processor)
+print(myobj2.processor,myobj2.Display)
+
+obj=mylaptop("red")
+obj1=mylaptop("Black")
+print(obj.color,obj.processor)
+
+#normal method
+obj3=mylaptop("red")
+obj3.greet()
+
+
+#inheritance
+object=mymobile("Grey","Samsung")
+print(object.camera,object.processor)
+
+#Encapsulation: to hide something
+#public encapsulation
+class data():
+    def __init__(self,username,password):
+        self.username=username
+        self.password=password
+        
+
+encap=data("Admin","Pass")
+print(encap.username , encap.password)
+
+#private encapsulation
+class data():
+    def __init__(self,username,password):
+        self.username=username
+        self.__password=password
+    def func(self):
+        print(self.__password)
+
+encap=data("Admin","Pass")
+encap.func()
+
+#Polymorphism
+class Bird():
+    def intro(self):
+        print("There are different types of birds")
+    def fly(self):
+        print("Most of the birds can fly")
+
+class parrot(Bird):
+    def fly(self):
+        print("Parrot can fly")
+
+class penguin(Bird):
+    def fly(self):
+        print("Penguins cannot fly")
+
+
+obj_bird=Bird()
+obj_parrot=parrot()
+obj_penguin=penguin()
+
+obj_bird.intro()
+obj_parrot.intro()
+obj_penguin.intro()
+
+obj_bird.fly()
+obj_parrot.fly()
+obj_penguin.fly()
+
+#Game Develpoment
